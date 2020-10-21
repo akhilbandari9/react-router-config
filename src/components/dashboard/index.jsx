@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Switch, Route, useHistory, useLocation } from 'react-router-dom';
-import Cart from './Cart';
+import { Link, Switch, Route, useHistory } from 'react-router-dom';
+// import Cart from './Cart';
 import Products from './Products';
 import Services from './Services';
 import Other from './Other';
@@ -11,7 +11,7 @@ const Index = () => {
 		history.push('/auth');
 	};
 
-	const { pathname } = useLocation();
+	// const { pathname } = useLocation();
 	// console.log(location);
 
 	return (
