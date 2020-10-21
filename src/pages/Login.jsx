@@ -1,24 +1,17 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/auth/authState';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import routes from '../routes';
-const Login = () => {
-	const { onLogin, isAuthenticated } = useContext(AuthContext);
-	const history = useHistory();
 
+const Login = () => {
+	const history = useHistory();
 	const loginHandler = () => {
-		console.log(isAuthenticated);
-		if (!isAuthenticated) {
-			onLogin();
-			history.push(routes.home);
-		} else {
-			return;
-		}
+		localStorage.setItem('token', '12345566');
+		history.push('/app');
 	};
 	return (
 		<div className='container'>
+			<h1>Login Page</h1>
 			<div className='form'>
-				<button onClick={loginHandler} className='btn btn-primary'>
+				<button className='btn btn-primary' onClick={loginHandler}>
 					Login
 				</button>
 			</div>
